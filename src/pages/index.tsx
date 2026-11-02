@@ -5,16 +5,25 @@ import { Button } from "@/components/ui/button";
 import {
   ChevronRight,
   Code2,
-  Frame,
-  SearchCheck,
-  Eye,
-  MonitorSmartphone,
+  Database,
+  Cloud,
+  Layers,
+  Zap,
+  Activity,
+  FileDown,
+  Linkedin,
+  Github,
+  GraduationCap,
+  Award,
+  ExternalLink,
+  Cpu,
+  Server,
+  CheckCircle2,
 } from "lucide-react";
 import { TriangleDownIcon } from "@radix-ui/react-icons";
 import Spline from "@splinetool/react-spline";
 import Link from "next/link";
 import { cn, scrollTo } from "@/lib/utils";
-import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Carousel,
@@ -28,79 +37,111 @@ import VanillaTilt from "vanilla-tilt";
 import { motion } from "framer-motion";
 
 const aboutStats = [
-  { label: "Years of experience", value: "3+" },
-  { label: "Technologies mastered", value: "5+" },
-  { label: "Companies worked with", value: "15+" },
+  { label: "B.E. CSE CGPA (Sathyabama)", value: "7.49" },
+  { label: "Production Platforms Built", value: "3+" },
+  { label: "API Read Latency Cut", value: "45%" },
+  { label: "Cloud Waste Reduced", value: "20%" },
+  { label: "SQL Query Speedup", value: "30%" },
+  { label: "HSC Board Percentage", value: "75.8%" },
 ];
 
 const projects = [
   {
-    title: "Unqueue",
-    description: "E-commerce platform for selling digital products",
-    image: "/assets/unqueue.webm",
-    href: "https://unqueue.shop/",
-  },
-  {
-    title: "InfiniteVPS",
-    description: "High performance VPS hosting solution",
-    image: "/assets/infinitevps.webm",
-    href: "#",
-  },
-  {
-    title: "TranslateBot",
-    description: "Powerful Multilingual Translation Bot for Discord",
-    image: "/assets/translate_bot.webm",
-    href: "https://translatebot.app/",
-  },
-  {
-    title: "Wrona",
-    description: "Robotics-focused technology company",
-    image: "/assets/wrona.jpeg",
-    href: "https://www.wrona.com/",
-  },
-  {
-    title: "This website",
-    description: "My personal website",
+    title: "SEVA – Food Sharing & Surplus Redistribution",
+    category: "Full-Stack & Database Engineering",
+    description:
+      "Normalized 3NF relational database schema handling concurrent donor, NGO, and volunteer transactions. Implemented role-based access control and query optimization cutting latency by 30%.",
     image: "/assets/portfolio.webm",
-    href: "https://github.com/wendoj/portfolio",
+    tags: ["Python", "Flask", "MySQL", "REST APIs", "Tailwind CSS"],
+    href: "https://github.com/Eniyavan-Tech",
+  },
+  {
+    title: "AWS Cost & Performance Optimisation Engine",
+    category: "Cloud Telemetry & Predictive Analytics",
+    description:
+      "Automated real-time telemetry extraction for EC2 clusters using AWS CloudWatch and Boto3. Built regression models to identify idle compute resources, trimming cloud over-provisioning by 20%.",
+    image: "/assets/infinitevps.webm",
+    tags: ["AWS CloudWatch", "Boto3", "Python", "Flask", "Redis"],
+    href: "https://github.com/Eniyavan-Tech",
+  },
+  {
+    title: "TaskSync – High-Throughput API & Task Manager",
+    category: "Asynchronous Microservices",
+    description:
+      "High-concurrency task queue service with Redis caching layers, dropping p95 read latency by 45%. Dockerized with automated CI/CD and comprehensive PyTest suite (>85% coverage).",
+    image: "/assets/translate_bot.webm",
+    tags: ["FastAPI", "PostgreSQL", "Redis", "Docker", "PyTest"],
+    href: "https://github.com/Eniyavan-Tech",
+  },
+  {
+    title: "Interactive 3D Engineering Portfolio",
+    category: "Modern Web Experience",
+    description:
+      "Showcasing architectural excellence with Next.js 14, Locomotive Scroll, Framer Motion, Spline 3D viewport, and real-time IST clock telemetry.",
+    image: "/assets/unqueue.webm",
+    tags: ["Next.js 14", "TypeScript", "Tailwind CSS", "Spline 3D"],
+    href: "https://github.com/Eniyavan-Tech",
+  },
+];
+
+const skillsCategories = [
+  {
+    title: "Programming Languages",
+    icon: Code2,
+    skills: ["Python", "JavaScript (ES6+)", "TypeScript", "SQL (PostgreSQL/MySQL)", "HTML5 & CSS3"],
+  },
+  {
+    title: "Frameworks & Backend",
+    icon: Server,
+    skills: ["FastAPI", "Flask", "Next.js", "React", "RESTful Architecture", "PyTest"],
+  },
+  {
+    title: "Cloud & DevOps",
+    icon: Cloud,
+    skills: ["AWS CloudWatch", "AWS EC2 & S3", "Boto3 SDK", "Docker Containerization", "Git & GitHub Actions"],
+  },
+  {
+    title: "Databases & In-Memory",
+    icon: Database,
+    skills: ["PostgreSQL", "MySQL", "Redis (Caching)", "SQLite", "3NF Normalization & Indexing"],
   },
 ];
 
 const services = [
   {
-    service: "Frontend Development",
+    service: "High-Throughput RESTful APIs",
     description:
-      "Creating stellar user interfaces and web experiences using the latest technologies.",
-    icon: Code2,
+      "Designing asynchronous, scalable microservices and resilient REST APIs using FastAPI and Flask with strict schema validation and JWT authentication.",
+    icon: Zap,
   },
   {
-    service: "UX Design",
+    service: "Cloud Telemetry & Cost Optimization",
     description:
-      "Building intuitive, user-centric designs that drive engagement and conversion.",
-    icon: Frame,
+      "Automating infrastructure metrics collection via AWS CloudWatch and Boto3 Python SDK to identify idle compute and trim over-provisioned spend.",
+    icon: Activity,
   },
   {
-    service: "SEO Optimization",
+    service: "Database Architecture & Optimization",
     description:
-      "Enhancing your website's visibility in search engines for increased organic traffic.",
-    icon: SearchCheck,
+      "Structuring 3NF relational schemas, composite indexing, and Redis in-memory caching to eliminate bottlenecks and drop query latency by up to 45%.",
+    icon: Database,
   },
   {
-    service: "Responsive Design",
+    service: "Dockerized Microservice Deployment",
     description:
-      "Designing websites that look and perform equally well on all devices and screen sizes.",
-    icon: MonitorSmartphone,
+      "Packaging applications into secure, lightweight Docker containers with structured environment configs and CI/CD automated test suites.",
+    icon: Layers,
   },
   {
-    service: "Backend Development",
+    service: "Full-Stack Web Engineering",
     description:
-      "Developing robust, scalable server-side logic for a wide range of web applications.",
-    icon: Eye,
+      "Building reactive, responsive client interfaces with React, Next.js, and Tailwind CSS seamlessly integrated with modern backend services.",
+    icon: Cpu,
   },
 ];
 
 export default function Home() {
-  const refScrollContainer = useRef(null);
+  const refScrollContainer = useRef<HTMLDivElement>(null);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
   const [current, setCurrent] = useState<number>(0);
@@ -112,30 +153,32 @@ export default function Home() {
     const navLinks = document.querySelectorAll(".nav-link");
 
     async function getLocomotive() {
-      const Locomotive = (await import("locomotive-scroll")).default;
-      new Locomotive({
-        el: refScrollContainer.current ?? new HTMLElement(),
-        smooth: true,
-      });
+      try {
+        const Locomotive = (await import("locomotive-scroll")).default;
+        new Locomotive({
+          el: refScrollContainer.current ?? new HTMLElement(),
+          smooth: true,
+        });
+      } catch (err) {
+        console.warn("Locomotive scroll init fallback", err);
+      }
     }
 
     function handleScroll() {
-      let current = "";
+      let currentSection = "";
       setIsScrolled(window.scrollY > 0);
 
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
         if (window.scrollY >= sectionTop - 250) {
-          current = section.getAttribute("id") ?? "";
+          currentSection = section.getAttribute("id") ?? "";
         }
       });
 
       navLinks.forEach((li) => {
         li.classList.remove("nav-active");
-
-        if (li.getAttribute("href") === `#${current}`) {
+        if (li.getAttribute("href") === `#${currentSection}`) {
           li.classList.add("nav-active");
-          console.log(li.getAttribute("href"));
         }
       });
     }
@@ -159,17 +202,19 @@ export default function Home() {
     });
   }, [carouselApi]);
 
-  // card hover effect
+  // card hover tilt effect
   useEffect(() => {
     const tilt: HTMLElement[] = Array.from(document.querySelectorAll("#tilt"));
-    VanillaTilt.init(tilt, {
-      speed: 300,
-      glare: true,
-      "max-glare": 0.1,
-      gyroscope: true,
-      perspective: 900,
-      scale: 0.9,
-    });
+    if (tilt.length > 0) {
+      VanillaTilt.init(tilt, {
+        speed: 300,
+        glare: true,
+        "max-glare": 0.12,
+        gyroscope: true,
+        perspective: 900,
+        scale: 0.98,
+      });
+    }
   }, []);
 
   return (
@@ -177,22 +222,24 @@ export default function Home() {
       <div ref={refScrollContainer}>
         <Gradient />
 
-        {/* Intro */}
+        {/* Hero Section */}
         <section
           id="home"
           data-scroll-section
-          className="mt-40 flex w-full flex-col items-center xl:mt-0 xl:min-h-screen xl:flex-row xl:justify-between"
+          className="mt-32 flex w-full flex-col items-center xl:mt-0 xl:min-h-screen xl:flex-row xl:justify-between"
         >
           <div className={styles.intro}>
             <div
               data-scroll
               data-scroll-direction="horizontal"
               data-scroll-speed=".09"
-              className="flex flex-row items-center space-x-1.5"
+              className="flex flex-wrap items-center gap-2"
             >
-              <span className={styles.pill}>next.js</span>
-              <span className={styles.pill}>tailwindcss</span>
-              <span className={styles.pill}>typescript</span>
+              <span className={styles.pill}>Python</span>
+              <span className={styles.pill}>FastAPI & Flask</span>
+              <span className={styles.pill}>AWS & Boto3</span>
+              <span className={styles.pill}>PostgreSQL & Redis</span>
+              <span className={styles.pill}>Docker</span>
             </div>
             <div>
               <h1
@@ -201,42 +248,81 @@ export default function Home() {
                 data-scroll-speed=".06"
                 data-scroll-direction="horizontal"
               >
-                <span className="text-6xl tracking-tighter text-foreground 2xl:text-8xl">
+                <span className="text-5xl font-light tracking-tight text-foreground sm:text-6xl 2xl:text-7xl">
                   Hello, I&apos;m
                   <br />
                 </span>
-                <span className="clash-grotesk text-gradient text-6xl 2xl:text-8xl">
-                  WendoJ.
+                <span className="clash-grotesk text-gradient text-6xl font-bold tracking-tight sm:text-7xl 2xl:text-8xl">
+                  Eniyavan M.
                 </span>
               </h1>
               <p
                 data-scroll
                 data-scroll-enable-touch-speed
                 data-scroll-speed=".06"
-                className="mt-1 max-w-lg tracking-tight text-muted-foreground 2xl:text-xl"
+                className="mt-3 max-w-xl text-base tracking-tight text-muted-foreground sm:text-lg 2xl:text-xl leading-relaxed"
               >
-                An experienced full-stack website developer with a passion for
-                crafting unique digital experiences.
+                Full-Stack Software Developer & Cloud Telemetry Specialist from Chennai, India.
+                B.E. Computer Science graduate (CGPA 7.49) proficient in scalable RESTful APIs,
+                high-throughput backend microservices, and automated cloud cost optimization.
               </p>
             </div>
-            <span
+            <div
               data-scroll
               data-scroll-enable-touch-speed
               data-scroll-speed=".06"
-              className="flex flex-row items-center space-x-1.5 pt-6"
+              className="flex flex-wrap items-center gap-3 pt-4"
             >
-              <Link href="mailto:wendoj@proton.me" passHref>
-                <Button>
+              <Link href="mailto:eniyavan216@gmail.com" passHref>
+                <Button className="font-medium shadow-lg shadow-primary/20">
                   Get in touch <ChevronRight className="ml-1 h-4 w-4" />
                 </Button>
               </Link>
-              <Button
-                variant="outline"
-                onClick={() => scrollTo(document.querySelector("#about"))}
+
+              <Link
+                href="https://github.com/Eniyavan-Tech"
+                target="_blank"
+                rel="noopener noreferrer"
+                passHref
               >
-                Learn more
+                <Button variant="outline" className="border-white/10 hover:border-primary/50 gap-2">
+                  <Github className="h-4 w-4" />
+                  GitHub
+                </Button>
+              </Link>
+
+              <Link
+                href="https://www.linkedin.com/in/eniyavan-m-b49407290/"
+                target="_blank"
+                rel="noopener noreferrer"
+                passHref
+              >
+                <Button variant="outline" className="border-white/10 hover:border-primary/50 gap-2">
+                  <Linkedin className="h-4 w-4 text-[#0077b5]" />
+                  LinkedIn
+                </Button>
+              </Link>
+
+              <a
+                href="/assets/Eniyavan_M_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Eniyavan_M_Resume.pdf"
+              >
+                <Button variant="outline" className="border-white/10 hover:border-primary/50 gap-2">
+                  <FileDown className="h-4 w-4" />
+                  Download CV
+                </Button>
+              </a>
+
+              <Button
+                variant="ghost"
+                onClick={() => scrollTo(document.querySelector("#about"))}
+                className="text-muted-foreground hover:text-foreground"
+              >
+                Explore Experience ↓
               </Button>
-            </span>
+            </div>
 
             <div
               className={cn(
@@ -244,55 +330,131 @@ export default function Home() {
                 isScrolled && styles["scroll--hidden"],
               )}
             >
-              Scroll to discover{" "}
+              Scroll to explore{" "}
               <TriangleDownIcon className="mt-1 animate-bounce" />
             </div>
           </div>
+
           <div
             data-scroll
             data-scroll-speed="-.01"
             id={styles["canvas-container"]}
-            className="mt-14 h-full w-full xl:mt-0"
+            className="mt-12 h-[460px] w-full xl:mt-0 xl:h-[530px]"
           >
-            <Suspense fallback={<span>Loading...</span>}>
+            <Suspense
+              fallback={
+                <div className="flex h-full w-full items-center justify-center text-muted-foreground">
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" />
+                    <span className="text-sm">Loading 3D Scene...</span>
+                  </div>
+                </div>
+              }
+            >
               <Spline scene="/assets/scene.splinecode" />
             </Suspense>
           </div>
         </section>
 
-        {/* About */}
-        <section id="about" data-scroll-section>
+        {/* About & Education */}
+        <section id="about" data-scroll-section className="my-24">
           <div
             data-scroll
-            data-scroll-speed=".4"
+            data-scroll-speed=".3"
             data-scroll-position="top"
-            className="my-14 flex max-w-6xl flex-col justify-start space-y-10"
+            className="flex max-w-6xl flex-col justify-start space-y-12"
           >
-            <h2 className="py-16  pb-2 text-3xl font-light leading-normal tracking-tighter text-foreground xl:text-[40px]">
-              I&apos;m an experienced full-stack developer proficient in{" "}
-              <Link
-                href="https://create.t3.gg/"
-                target="_blank"
-                className="underline"
-              >
-                TypeScript, Tailwind, and Next.js
-              </Link>{" "}
-              since 2021. My experience spans from startups to mid-sized
-              companies, where I&apos;ve been instrumental in the entire product
-              design process; from ideation and wireframing, through
-              prototyping, to the delivery of the final product, all while
-              efficiently collaborating with cross-functional teams.
-            </h2>
-            <div className="grid grid-cols-2 gap-8 xl:grid-cols-3">
+            <div>
+              <span className="text-gradient clash-grotesk text-sm font-semibold tracking-wider uppercase">
+                About & Background
+              </span>
+              <h2 className="mt-3 text-3xl font-light leading-snug tracking-tight text-foreground sm:text-4xl xl:text-[40px]">
+                Engineering high-performance software with strong foundations in{" "}
+                <span className="text-gradient font-medium clash-grotesk">
+                  Python, AWS Cloud Architecture, and Database Systems
+                </span>.
+              </h2>
+              <p className="mt-4 text-base text-muted-foreground leading-relaxed max-w-4xl">
+                I am a Computer Science graduate from Sathyabama Institute of Science and Technology,
+                dedicated to architecting robust web platforms. From optimizing relational schemas in MySQL/PostgreSQL
+                and slashing p95 latency via Redis, to harvesting real-time compute metrics using AWS CloudWatch and Boto3,
+                I focus on high reliability, resource efficiency, and clean system design.
+              </p>
+            </div>
+
+            {/* Education & Certifications Row */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="rounded-xl border border-white/5 bg-white/[2%] p-6 backdrop-blur">
+                <div className="flex items-center space-x-3 mb-4">
+                  <div className="p-2.5 rounded-lg bg-primary/10 text-primary">
+                    <GraduationCap className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg text-foreground">Education</h3>
+                    <p className="text-xs text-muted-foreground">Academic credentials</p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="border-l-2 border-primary/40 pl-3">
+                    <p className="font-medium text-foreground text-sm">B.E. in Computer Science and Engineering</p>
+                    <p className="text-xs text-muted-foreground">Sathyabama Institute of Science & Technology · 2022–2026</p>
+                    <p className="text-xs font-semibold text-emerald-400 mt-0.5">CGPA: 7.49 / 10</p>
+                  </div>
+                  <div className="border-l-2 border-white/10 pl-3">
+                    <p className="font-medium text-foreground text-sm">Higher Secondary Certificate (HSC - 12th)</p>
+                    <p className="text-xs text-muted-foreground">Cheran Matriculation Hr. Sec. School · 2021–2022</p>
+                    <p className="text-xs font-semibold text-emerald-400 mt-0.5">Score: 75.8%</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-white/5 bg-white/[2%] p-6 backdrop-blur">
+                <div className="flex items-center space-x-3 mb-4">
+                  <div className="p-2.5 rounded-lg bg-primary/10 text-primary">
+                    <Award className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg text-foreground">Industry Certifications</h3>
+                    <p className="text-xs text-muted-foreground">Verified technical proficiencies</p>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-start space-x-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <div>
+                      <p className="text-sm font-medium text-foreground">Postman API Fundamentals Student Expert</p>
+                      <p className="text-xs text-muted-foreground">REST API testing, collections, mock servers, & automated test assertions</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <div>
+                      <p className="text-sm font-medium text-foreground">NPTEL – Database Management Systems (DBMS)</p>
+                      <p className="text-xs text-muted-foreground">Relational algebra, 3NF/BCNF normalization, indexing, transaction ACID properties</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <div>
+                      <p className="text-sm font-medium text-foreground">NPTEL – Introduction to Machine Learning</p>
+                      <p className="text-xs text-muted-foreground">Statistical modeling, regression heuristics, and predictive telemetry analysis</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Key Numerical Metrics */}
+            <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 xl:grid-cols-6 pt-4">
               {aboutStats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="flex flex-col items-center text-center xl:items-start xl:text-start"
+                  className="flex flex-col items-center rounded-lg border border-white/5 bg-white/[1.5%] p-4 text-center hover:bg-white/[3%] transition"
                 >
-                  <span className="clash-grotesk text-gradient text-4xl font-semibold tracking-tight xl:text-6xl">
+                  <span className="clash-grotesk text-gradient text-3xl font-bold tracking-tight xl:text-4xl">
                     {stat.value}
                   </span>
-                  <span className="tracking-tight text-muted-foreground xl:text-lg">
+                  <span className="mt-1 text-xs tracking-tight text-muted-foreground">
                     {stat.label}
                   </span>
                 </div>
@@ -301,9 +463,49 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Projects */}
-        <section id="projects" data-scroll-section>
-          {/* Gradient */}
+        {/* Skills Section */}
+        <section id="skills" data-scroll-section className="my-24">
+          <div data-scroll data-scroll-speed=".3" className="flex flex-col space-y-10">
+            <div>
+              <span className="text-gradient clash-grotesk text-sm font-semibold tracking-wider uppercase">
+                Technical Stack
+              </span>
+              <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-5xl">
+                Tools & technologies I work with.
+              </h2>
+              <p className="mt-2 text-muted-foreground max-w-2xl">
+                A structured breakdown of my hands-on technical proficiencies across software development, cloud infrastructure, and database systems.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+              {skillsCategories.map((cat) => (
+                <div
+                  key={cat.title}
+                  className="rounded-xl border border-white/5 bg-white/[2%] p-6 backdrop-blur hover:border-primary/30 transition duration-300"
+                >
+                  <div className="flex items-center space-x-3 mb-4">
+                    <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                      <cat.icon className="w-5 h-5" />
+                    </div>
+                    <h3 className="font-semibold text-base text-foreground">{cat.title}</h3>
+                  </div>
+                  <ul className="space-y-2">
+                    {cat.skills.map((skill) => (
+                      <li key={skill} className="flex items-center space-x-2 text-xs text-muted-foreground">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0" />
+                        <span className="hover:text-foreground transition">{skill}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Projects Showcase */}
+        <section id="projects" data-scroll-section className="my-28">
           <div className="relative isolate -z-10">
             <div
               className="absolute inset-x-0 -top-40 transform-gpu overflow-hidden blur-[100px] sm:-top-80 lg:-top-60"
@@ -318,137 +520,193 @@ export default function Home() {
               />
             </div>
           </div>
-          <div data-scroll data-scroll-speed=".4" className="my-64">
-            <span className="text-gradient clash-grotesk text-sm font-semibold tracking-tighter">
-              ✨ Projects
+
+          <div data-scroll data-scroll-speed=".3">
+            <span className="text-gradient clash-grotesk text-sm font-semibold tracking-wider uppercase">
+              Featured Work
             </span>
-            <h2 className="mt-3 text-4xl font-semibold tracking-tight tracking-tighter xl:text-6xl">
-              Streamlined digital experiences.
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-5xl">
+              Scalable platforms & distributed systems.
             </h2>
-            <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
-              I&apos;ve worked on a variety of projects, from small websites to
-              large-scale web applications. Here are some of my favorites:
+            <p className="mt-2 text-base text-muted-foreground max-w-2xl">
+              Engineered with a focus on database performance, high throughput, and automated cloud telemetry.
             </p>
 
             {/* Carousel */}
-            <div className="mt-14">
+            <div className="mt-12">
               <Carousel setApi={setCarouselApi} className="w-full">
                 <CarouselContent>
                   {projects.map((project) => (
                     <CarouselItem key={project.title} className="md:basis-1/2">
-                      <Card id="tilt">
-                        <CardHeader className="p-0">
-                          <Link href={project.href} target="_blank" passHref>
-                            {project.image.endsWith(".webm") ? (
-                              <video
-                                src={project.image}
-                                autoPlay
-                                loop
-                                muted
-                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                              />
-                            ) : (
-                              <Image
-                                src={project.image}
-                                alt={project.title}
-                                width={600}
-                                height={300}
-                                quality={100}
-                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                              />
-                            )}
+                      <Card id="tilt" className="overflow-hidden border border-white/10 bg-background/60 backdrop-blur-md">
+                        <CardHeader className="p-0 relative group">
+                          <Link href={project.href} target="_blank" rel="noopener noreferrer">
+                            <video
+                              src={project.image}
+                              autoPlay
+                              loop
+                              muted
+                              playsInline
+                              className="aspect-video h-full w-full bg-primary/10 object-cover transition duration-300 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+                            <div className="absolute top-3 right-3 p-2 rounded-full bg-black/60 backdrop-blur border border-white/10 text-white/80 group-hover:text-primary transition">
+                              <ExternalLink className="w-4 h-4" />
+                            </div>
                           </Link>
                         </CardHeader>
-                        <CardContent className="absolute bottom-0 w-full bg-background/50 backdrop-blur">
-                          <CardTitle className="border-t border-white/5 p-4 text-base font-normal tracking-tighter">
-                            {project.description}
+                        <CardContent className="p-6 space-y-3">
+                          <div className="flex items-center justify-between">
+                            <span className="text-xs font-semibold text-primary uppercase tracking-wider">
+                              {project.category}
+                            </span>
+                          </div>
+                          <CardTitle className="text-xl font-bold tracking-tight text-foreground">
+                            {project.title}
                           </CardTitle>
+                          <p className="text-xs text-muted-foreground leading-relaxed">
+                            {project.description}
+                          </p>
+                          <div className="flex flex-wrap gap-1.5 pt-2">
+                            {project.tags.map((tag) => (
+                              <span
+                                key={tag}
+                                className="px-2 py-0.5 rounded text-[11px] font-mono bg-white/5 border border-white/5 text-slate-300"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
                         </CardContent>
                       </Card>
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
+                <CarouselPrevious className="left-2" />
+                <CarouselNext className="right-2" />
               </Carousel>
-              <div className="py-2 text-center text-sm text-muted-foreground">
-                <span className="font-semibold">
+              <div className="py-4 text-center text-xs text-muted-foreground">
+                <span className="font-semibold text-foreground">
                   {current} / {count}
                 </span>{" "}
-                projects
+                featured projects · Slide to view all
               </div>
             </div>
           </div>
         </section>
 
-        {/* Services */}
-        <section id="services" data-scroll-section>
+        {/* Services & Capabilities */}
+        <section id="services" data-scroll-section className="my-24">
           <div
             data-scroll
-            data-scroll-speed=".4"
+            data-scroll-speed=".3"
             data-scroll-position="top"
-            className="my-24 flex flex-col justify-start space-y-10"
+            className="flex flex-col space-y-10"
           >
             <motion.div
               initial={{ opacity: 0, y: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{
-                duration: 1,
-                staggerChildren: 0.5,
-              }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="grid items-center gap-1.5 md:grid-cols-2 xl:grid-cols-3"
+              className="grid items-stretch gap-4 md:grid-cols-2 xl:grid-cols-3"
             >
-              <div className="flex flex-col py-6 xl:p-6">
-                <h2 className="text-4xl font-medium tracking-tight">
-                  Need more info?
+              <div className="flex flex-col justify-center rounded-xl border border-primary/20 bg-primary/5 p-8 shadow-sm">
+                <span className="text-xs font-semibold uppercase tracking-wider text-primary">
+                  Engineering Capabilities
+                </span>
+                <h2 className="mt-2 text-3xl font-medium tracking-tight">
+                  High-Impact
                   <br />
-                  <span className="text-gradient clash-grotesk tracking-normal">
-                    I got you.
+                  <span className="text-gradient clash-grotesk font-bold">
+                    Solutions Delivered.
                   </span>
                 </h2>
-                <p className="mt-2 tracking-tighter text-secondary-foreground">
-                  Here are some of the services I offer. If you have any
-                  questions, feel free to reach out.
+                <p className="mt-3 text-sm text-secondary-foreground leading-relaxed">
+                  Specialized in asynchronous microservices, database tuning, and cloud telemetry pipelines built for scale and cost-efficiency.
                 </p>
               </div>
+
               {services.map((service) => (
                 <div
                   key={service.service}
-                  className="flex flex-col items-start rounded-md bg-white/5 p-14 shadow-md backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white/10 hover:shadow-md"
+                  className="flex flex-col items-start justify-between rounded-xl border border-white/5 bg-white/[2%] p-8 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white/[4%]"
                 >
-                  <service.icon className="my-6 text-primary" size={20} />
-                  <span className="text-lg tracking-tight text-foreground">
-                    {service.service}
-                  </span>
-                  <span className="mt-2 tracking-tighter text-muted-foreground">
-                    {service.description}
-                  </span>
+                  <div className="p-3 rounded-lg bg-primary/10 text-primary mb-4">
+                    <service.icon size={22} />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-semibold tracking-tight text-foreground">
+                      {service.service}
+                    </h3>
+                    <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                      {service.description}
+                    </p>
+                  </div>
                 </div>
               ))}
             </motion.div>
           </div>
         </section>
 
-        {/* Contact */}
-        <section id="contact" data-scroll-section className="my-64">
+        {/* Contact CTA */}
+        <section id="contact" data-scroll-section className="my-28">
           <div
             data-scroll
-            data-scroll-speed=".4"
+            data-scroll-speed=".3"
             data-scroll-position="top"
-            className="flex flex-col items-center justify-center rounded-lg bg-gradient-to-br from-primary/[6.5%] to-white/5 px-8 py-16 text-center xl:py-24"
+            className="flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-br from-primary/[8%] via-background to-white/[2%] px-6 py-16 text-center sm:px-12 xl:py-20 backdrop-blur"
           >
-            <h2 className="text-4xl font-medium tracking-tighter xl:text-6xl">
-              Let&apos;s work{" "}
+            <span className="px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-4">
+              Open to Opportunities · Full-Time / SDE Intern
+            </span>
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-5xl xl:text-6xl">
+              Let&apos;s build scalable systems{" "}
               <span className="text-gradient clash-grotesk">together.</span>
             </h2>
-            <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
-              I&apos;m currently available for freelance work and open to
-              discussing new projects.
+            <p className="mt-3 max-w-xl text-sm text-muted-foreground sm:text-base leading-relaxed">
+              Whether you are hiring for Full-Stack, Backend Python, or Cloud Telemetry roles,
+              I am ready to bring immediate value to your engineering team.
             </p>
-            <Link href="mailto:wendoj@proton.me" passHref>
-              <Button className="mt-6">Get in touch</Button>
-            </Link>
+            <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
+              <Link href="mailto:eniyavan216@gmail.com" passHref>
+                <Button size="lg" className="font-semibold shadow-lg shadow-primary/20">
+                  Email Me: eniyavan216@gmail.com
+                </Button>
+              </Link>
+              <Link
+                href="https://github.com/Eniyavan-Tech"
+                target="_blank"
+                rel="noopener noreferrer"
+                passHref
+              >
+                <Button size="lg" variant="outline" className="border-white/10 hover:border-primary/50 gap-2">
+                  <Github className="w-4 h-4" /> GitHub: @Eniyavan-Tech
+                </Button>
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/eniyavan-m-b49407290/"
+                target="_blank"
+                rel="noopener noreferrer"
+                passHref
+              >
+                <Button size="lg" variant="outline" className="border-white/10 hover:border-primary/50 gap-2">
+                  <Linkedin className="w-4 h-4 text-[#0077b5]" /> Connect on LinkedIn
+                </Button>
+              </Link>
+              <a
+                href="/assets/Eniyavan_M_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Eniyavan_M_Resume.pdf"
+              >
+                <Button size="lg" variant="secondary" className="gap-2">
+                  <FileDown className="w-4 h-4" /> Download Resume
+                </Button>
+              </a>
+            </div>
+            <p className="mt-6 text-xs text-muted-foreground">
+              📍 Chennai, Tamil Nadu, India · 📞 +91 9952465467
+            </p>
           </div>
         </section>
       </div>
@@ -460,14 +718,14 @@ function Gradient() {
   return (
     <>
       {/* Upper gradient */}
-      <div className="absolute -top-40 right-0 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+      <div className="absolute -top-40 right-0 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 pointer-events-none">
         <svg
           className="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
           viewBox="0 0 1155 678"
         >
           <path
             fill="url(#45de2b6b-92d5-4d68-a6a0-9b9b2abad533)"
-            fillOpacity=".1"
+            fillOpacity=".15"
             d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
           />
           <defs>
@@ -487,14 +745,14 @@ function Gradient() {
       </div>
 
       {/* Lower gradient */}
-      <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
+      <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)] pointer-events-none">
         <svg
           className="relative left-[calc(50%+3rem)] h-[21.1875rem] max-w-none -translate-x-1/2 sm:left-[calc(50%+36rem)] sm:h-[42.375rem]"
           viewBox="0 0 1155 678"
         >
           <path
             fill="url(#ecb5b0c9-546c-4772-8c71-4d3f06d544bc)"
-            fillOpacity=".1"
+            fillOpacity=".15"
             d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
           />
           <defs>

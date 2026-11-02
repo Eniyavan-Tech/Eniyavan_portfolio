@@ -1,55 +1,70 @@
-# 🖥️ Personal Portfolio
+# 🚀 Eniyavan M — Developer Portfolio
 
-A sleek, modern, and responsive portfolio bootstrapped with [create-t3-app](https://create.t3.gg/).
+A high-performance personal developer portfolio showcasing scalable full-stack engineering, AWS cloud telemetry, and database architecture. Built with **Next.js 14**, **TypeScript**, **Tailwind CSS**, **Framer Motion**, **Locomotive Scroll**, and **Spline 3D**.
 
-[Website Preview](https://github.com/wendoj/portfolio/assets/77996774/b73b02d7-0657-41e3-9124-e6d04b17fe93)
+🌐 **LinkedIn**: [linkedin.com/in/eniyavan-m-b49407290](https://www.linkedin.com/in/eniyavan-m-b49407290/)  
+🐙 **GitHub**: [github.com/Eniyavan-Tech](https://github.com/Eniyavan-Tech)  
+📧 **Email**: [eniyavan216@gmail.com](mailto:eniyavan216@gmail.com)
 
-[🔗 Link to portfolio](https://wendoj.vercel.app)
+---
 
-All you need to know about me, my projects and skills can be found here. Personalize the portfolio by modifying `src/pages/index.tsx` and `src/styles/globals.css` to emulate your own portfolio. Made some improvements and want to share? Open a pull request.
-For any issues, feel free to report them here.
+## 🛠️ Tech Stack & Architecture
 
-## 🎉 Features
-- **Responsive Design**: The portfolio is designed to be fully responsive, providing an optimal viewing experience across a wide range of devices from desktops to mobile phones.
-- **Easy Customization**: The portfolio structure is straightforward and well organized, making it easy to customize and showcase your unique set of skills and projects.
-- **Stunning UI/UX Design**: The portfolio boasts a sleek and modern design, using smooth animations to capture the attention of potential employers or clients.
-- **Interactive UI**: Utilizing modern web development techniques, the portfolio offers an interactive user interface that enhances user experience, such as `locomotive-scroll` and `framer-motion`.
+- **Framework**: Next.js 14 (Pages Router) & React 18
+- **Language**: TypeScript & Python
+- **Styling**: Tailwind CSS & Clash Grotesk Typography
+- **Animations**: Framer Motion & VanillaTilt
+- **Smooth Scroll**: Locomotive Scroll v5
+- **3D Graphics**: Spline 3D Scene Viewport
+- **Icons**: Lucide React & Radix UI
 
-## 🚀 Getting Started
+---
 
-### Prerequisites
-To get started with this portfolio, ensure that you have the following installed on your system:
-- Node.js
-- npm
-- git
+## 🌟 Featured Projects
 
-## 🛠️ Installation
-Follow the steps below to clone and run this project on your local system:
+1. **SEVA – Food Sharing & Surplus Redistribution Platform**
+   - Normalized 3NF relational database schema handling concurrent donor, NGO, and volunteer transactions.
+   - Built with Python (Flask), MySQL, REST APIs, and Tailwind CSS.
+   - 30% reduction in query execution latency through query optimization and composite indexing.
+
+2. **AWS Cost & Performance Optimisation Engine**
+   - Automated real-time telemetry extraction for EC2 clusters using AWS CloudWatch and Boto3 Python SDK.
+   - Predictive regression models to identify idle compute resources, trimming cloud waste by 20%.
+   - Built with AWS CloudWatch, Boto3, Python, Flask, and Redis.
+
+3. **TaskSync – High-Throughput API & Task Manager**
+   - High-concurrency task queue service with Redis caching layers, dropping p95 read latency by 45%.
+   - Dockerized with automated CI/CD and comprehensive PyTest suite (>85% coverage).
+   - Built with FastAPI, PostgreSQL, Redis, Docker, and PyTest.
+
+---
+
+## 💻 Local Development
 
 ```bash
-# Clone the repository
-$ git clone https://github.com/wendoj/developer-portfolio.git
+# Clone this repository
+git clone https://github.com/Eniyavan-Tech/portfolio.git
+cd portfolio
 
-# Navigate to the project directory
-$ cd developer-portfolio
-
-# Remove current origin repository
-$ git remote remove origin
-```
-
-<br />
-
-Then install the required dependencies:
-```bash
 # Install dependencies
-$ npm install
+npm install --legacy-peer-deps
 
-# Start the development server:
-$ npm run dev
+# Run local development server
+npm run dev
+
+# Or build and start production server
+npm run build
+npm run start
 ```
-Now, open your browser and navigate to `http://localhost:3000` to view your portfolio live.
 
+Visit [http://localhost:3000](http://localhost:3000) to view the application.
 
-## How do I deploy this?
+---
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+## 🚢 Deploying to Vercel (Recommended)
+
+1. Push this repository to your GitHub account: `https://github.com/Eniyavan-Tech/portfolio`.
+2. Go to [vercel.com](https://vercel.com) and click **"Add New Project"**.
+3. Select your `portfolio` GitHub repository.
+4. Framework preset will automatically detect **Next.js**.
+5. Click **Deploy** — your live website URL will be ready in under 60 seconds!

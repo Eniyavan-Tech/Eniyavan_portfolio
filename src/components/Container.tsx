@@ -4,9 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn, scrollTo } from "@/lib/utils";
 import { useState, useEffect } from "react";
 import Footer from "@/components/Footer";
-import { useRouter } from "next/router";
 import Preloader from "@/components/Preloader";
 import styles from "@/styles/Container.module.css";
+import { FileDown, Linkedin, Github } from "lucide-react";
 
 type IconProps = {
   ["data-hide"]: boolean;
@@ -39,6 +39,7 @@ const variants = {
 const navLinks = [
   { href: "#home", text: "Home" },
   { href: "#about", text: "About" },
+  { href: "#skills", text: "Skills" },
   { href: "#projects", text: "Projects" },
   { href: "#services", text: "Services" },
   { href: "#contact", text: "Contact" },
@@ -81,10 +82,10 @@ export default function Container(props: ContainerProps) {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const { children, ...customMeta } = props;
-  const router = useRouter();
   const meta = {
-    title: "Wendo",
-    description: `Full-stack website developer and TypeScript enthusiast.`,
+    title: "Eniyavan M — Full-Stack Developer & Cloud Telemetry Specialist",
+    description:
+      "Portfolio of Eniyavan M: B.E. Computer Science graduate specializing in Python, FastAPI, AWS Cloud Telemetry, and High-Throughput RESTful Services.",
     image: "/assets/logo.webp",
     type: "website",
     ...customMeta,
@@ -105,11 +106,12 @@ export default function Container(props: ContainerProps) {
 
   // preloader effect
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setIsLoading(false);
       document.body.style.cursor = "default";
       window.scrollTo(0, 0);
-    }, 2000);
+    }, 1800);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -119,21 +121,12 @@ export default function Container(props: ContainerProps) {
         <meta name="robots" content="follow, index" />
         <meta name="theme-color" content="#7B82FE" />
         <meta content={meta.description} name="description" />
-        <meta
-          property="og:url"
-          content={`https://www.wendoj.codes${router.asPath}`}
-        />
-        <link
-          rel="canonical"
-          href={`https://www.wendoj.codes${router.asPath}`}
-        />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="WendoJ" />
+        <meta property="og:site_name" content="Eniyavan M Portfolio" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="WendoJ" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
@@ -144,7 +137,7 @@ export default function Container(props: ContainerProps) {
         className={cn(
           styles.nav,
           isScrolled
-            ? "bg-gradient-to-br from-background to-transparent shadow-md backdrop-blur transition"
+            ? "bg-background/80 shadow-md backdrop-blur-md transition duration-300 border-b border-white/5"
             : "bg-transparent",
         )}
       >
@@ -163,22 +156,59 @@ export default function Container(props: ContainerProps) {
             <CrossIcon data-hide={!isOpen} />
           </button>
         </div>
-        <Link href="/">
-          <span className="text-lg font-semibold">wendo</span>
+        <Link href="/" className="flex items-center space-x-2 group">
+          <span className="text-xl font-bold clash-grotesk tracking-tight text-gradient group-hover:opacity-90 transition">
+            &lt;Eniyavan.M /&gt;
+          </span>
+          <span className="hidden md:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+            Open to Work
+          </span>
         </Link>
 
         {/* Desktop menu */}
-        <ul className={styles["desktop-nav"]}>
-          {navLinks.map((link, i) => (
-            <NavItem
-              key={link.href}
-              href={link.href}
-              text={link.text}
-              i={i}
-              className="text-base"
-            />
-          ))}
-        </ul>
+        <div className="hidden sm:flex items-center space-x-6">
+          <ul className={styles["desktop-nav"]}>
+            {navLinks.map((link, i) => (
+              <NavItem
+                key={link.href}
+                href={link.href}
+                text={link.text}
+                i={i}
+                className="text-base"
+              />
+            ))}
+          </ul>
+
+          <div className="flex items-center space-x-2">
+            <Link
+              href="https://github.com/Eniyavan-Tech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-lg text-muted-foreground hover:text-primary transition duration-200"
+              title="GitHub Profile (@Eniyavan-Tech)"
+            >
+              <Github className="w-4 h-4" />
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/eniyavan-m-b49407290/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-lg text-muted-foreground hover:text-primary transition duration-200"
+              title="LinkedIn Profile"
+            >
+              <Linkedin className="w-4 h-4" />
+            </Link>
+            <a
+              href="/assets/Eniyavan_M_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download="Eniyavan_M_Resume.pdf"
+              className="inline-flex items-center text-xs font-medium px-3 py-1.5 rounded-md bg-white/5 hover:bg-primary hover:text-black border border-white/10 transition duration-300"
+            >
+              <FileDown className="w-3.5 h-3.5 mr-1.5" /> Resume
+            </a>
+          </div>
+        </div>
 
         {/* Mobile menu */}
         <AnimatePresence key="menu">
@@ -188,40 +218,74 @@ export default function Container(props: ContainerProps) {
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ duration: 1, type: "spring", bounce: 0.25 }}
+              transition={{ duration: 0.6, type: "spring", bounce: 0.15 }}
             >
               {/* Expandable menu */}
-              <div className="flex h-20 max-h-20 min-h-[60px] w-full items-center justify-between border-b pl-[22px] pr-1">
-                <span className="text-base font-medium lowercase">Menu</span>
+              <div className="flex h-20 max-h-20 min-h-[60px] w-full items-center justify-between border-b border-white/10 pl-[22px] pr-4">
+                <span className="text-base font-medium clash-grotesk text-gradient">
+                  Eniyavan M
+                </span>
                 <button
                   onClick={() => setIsOpen(!isOpen)}
                   className={styles.burger}
                   aria-controls="mobile-menu"
                   aria-expanded="false"
                 >
-                  <span className="sr-only">Open main menu</span>
+                  <span className="sr-only">Close menu</span>
                   <CrossIcon data-hide={!isOpen} />
                 </button>
               </div>
               <div className="flex h-full flex-col items-start justify-between overflow-y-auto">
                 {/* Links */}
-                <ul className="flex min-h-fit w-full flex-col items-start space-y-6 px-[22px] py-[58px]">
+                <ul className="flex min-h-fit w-full flex-col items-start space-y-6 px-[22px] py-[36px]">
                   {navLinks.map((link, i) => (
-                    <button key={link.href} onClick={() => setIsOpen(false)}>
+                    <button
+                      key={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className="text-left w-full"
+                    >
                       <NavItem
                         href={link.href}
                         text={link.text}
                         i={i}
-                        className="text-xl"
+                        className="text-2xl"
                       />
                     </button>
                   ))}
+                  <div className="pt-4 flex flex-col gap-3 w-full">
+                    <Link
+                      href="https://github.com/Eniyavan-Tech"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-2 text-muted-foreground hover:text-primary py-2"
+                    >
+                      <Github className="w-5 h-5" />
+                      <span>GitHub (@Eniyavan-Tech)</span>
+                    </Link>
+                    <Link
+                      href="https://www.linkedin.com/in/eniyavan-m-b49407290/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-2 text-muted-foreground hover:text-primary py-2"
+                    >
+                      <Linkedin className="w-5 h-5" />
+                      <span>LinkedIn Profile</span>
+                    </Link>
+                    <a
+                      href="/assets/Eniyavan_M_Resume.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center text-sm font-medium px-4 py-2.5 rounded-md bg-primary text-black font-semibold transition"
+                    >
+                      <FileDown className="w-4 h-4 mr-2" /> Download Resume
+                    </a>
+                  </div>
                 </ul>
 
                 {/* Footer */}
-                <div className="flex min-h-fit w-full flex-col space-y-8 px-[22px] py-10">
+                <div className="flex min-h-fit w-full flex-col space-y-4 px-[22px] py-10 border-t border-white/5">
                   <span className="text-sm text-muted-foreground">
-                    © {new Date().getFullYear()} wendo. All rights reserved.
+                    © {new Date().getFullYear()} Eniyavan M. All rights reserved.
                   </span>
                 </div>
               </div>
