@@ -1,10 +1,15 @@
 # 🚀 Eniyavan M — Developer Portfolio
 
+[![Live Website](https://img.shields.io/badge/Live_Demo-eniyavan--portfolio-7980fe?style=for-the-badge&logo=vercel)](https://eniyavan-portfolio-ca9w.vercel.app/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Eniyavan_portfolio-24292e?style=for-the-badge&logo=github)](https://github.com/Eniyavan-Tech/Eniyavan_portfolio)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Eniyavan_M-0077b5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/eniyavan-m-b49407290/)
+
 A high-performance personal developer portfolio showcasing scalable full-stack engineering, AWS cloud telemetry, and database architecture. Built with **Next.js 14**, **TypeScript**, **Tailwind CSS**, **Framer Motion**, **Locomotive Scroll**, and **Spline 3D**.
 
-🌐 **LinkedIn**: [linkedin.com/in/eniyavan-m-b49407290](https://www.linkedin.com/in/eniyavan-m-b49407290/)  
-🐙 **GitHub**: [github.com/Eniyavan-Tech](https://github.com/Eniyavan-Tech)  
-📧 **Email**: [eniyavan216@gmail.com](mailto:eniyavan216@gmail.com)
+- 🌐 **Live Website**: [https://eniyavan-portfolio-ca9w.vercel.app/](https://eniyavan-portfolio-ca9w.vercel.app/)
+- 🐙 **GitHub Repository**: [github.com/Eniyavan-Tech/Eniyavan_portfolio](https://github.com/Eniyavan-Tech/Eniyavan_portfolio)
+- 💼 **LinkedIn**: [linkedin.com/in/eniyavan-m-b49407290](https://www.linkedin.com/in/eniyavan-m-b49407290/)
+- 📧 **Email**: [eniyavan216@gmail.com](mailto:eniyavan216@gmail.com)
 
 ---
 
@@ -16,6 +21,7 @@ A high-performance personal developer portfolio showcasing scalable full-stack e
 - **Animations**: Framer Motion & VanillaTilt
 - **Smooth Scroll**: Locomotive Scroll v5
 - **3D Graphics**: Spline 3D Scene Viewport
+- **Deployment**: Vercel Edge Network & CI/CD
 - **Icons**: Lucide React & Radix UI
 
 ---
@@ -37,14 +43,19 @@ A high-performance personal developer portfolio showcasing scalable full-stack e
    - Dockerized with automated CI/CD and comprehensive PyTest suite (>85% coverage).
    - Built with FastAPI, PostgreSQL, Redis, Docker, and PyTest.
 
+4. **Interactive 3D Engineering Portfolio**
+   - Live URL: [https://eniyavan-portfolio-ca9w.vercel.app/](https://eniyavan-portfolio-ca9w.vercel.app/)
+   - Modern developer showcase with Locomotive Scroll, real-time IST clock, and 3D Spline scene.
+   - Built with Next.js 14, TypeScript, Tailwind CSS, and Spline 3D.
+
 ---
 
 ## 💻 Local Development
 
 ```bash
 # Clone this repository
-git clone https://github.com/Eniyavan-Tech/portfolio.git
-cd portfolio
+git clone https://github.com/Eniyavan-Tech/Eniyavan_portfolio.git
+cd Eniyavan_portfolio
 
 # Install dependencies
 npm install --legacy-peer-deps
@@ -57,14 +68,12 @@ npm run build
 npm run start
 ```
 
-Visit [http://localhost:3000](http://localhost:3000) to view the application.
+Visit [http://localhost:3000](http://localhost:3000) to view the application locally.
 
 ---
 
-## 🚢 Deploying to Vercel (Recommended)
+## 🚢 Continuous Deployment (Vercel)
 
-1. Push this repository to your GitHub account: `https://github.com/Eniyavan-Tech/portfolio`.
-2. Go to [vercel.com](https://vercel.com) and click **"Add New Project"**.
-3. Select your `portfolio` GitHub repository.
-4. Framework preset will automatically detect **Next.js**.
-5. Click **Deploy** — your live website URL will be ready in under 60 seconds!
+This repository is linked to Vercel for continuous deployment:
+- Any commit pushed to the `main` branch automatically triggers a new optimized production deployment at:
+  👉 [**https://eniyavan-portfolio-ca9w.vercel.app/**](https://eniyavan-portfolio-ca9w.vercel.app/)

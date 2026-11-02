@@ -121,6 +121,8 @@ export default function Container(props: ContainerProps) {
         <meta name="robots" content="follow, index" />
         <meta name="theme-color" content="#7B82FE" />
         <meta content={meta.description} name="description" />
+        <link rel="canonical" href="https://eniyavan-portfolio-ca9w.vercel.app/" />
+        <meta property="og:url" content="https://eniyavan-portfolio-ca9w.vercel.app/" />
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="Eniyavan M Portfolio" />
         <meta property="og:description" content={meta.description} />

@@ -75,12 +75,12 @@ const projects = [
   },
   {
     title: "Interactive 3D Engineering Portfolio",
-    category: "Modern Web Experience",
+    category: "Live Production Showcase",
     description:
-      "Showcasing architectural excellence with Next.js 14, Locomotive Scroll, Framer Motion, Spline 3D viewport, and real-time IST clock telemetry.",
+      "My personal developer portfolio built with Next.js 14, Locomotive Scroll, Framer Motion, Spline 3D viewport, and real-time IST clock telemetry. Deployed live on Vercel.",
     image: "/assets/unqueue.webm",
-    tags: ["Next.js 14", "TypeScript", "Tailwind CSS", "Spline 3D"],
-    href: "https://github.com/Eniyavan-Tech",
+    tags: ["Next.js 14", "TypeScript", "Tailwind CSS", "Vercel", "Spline 3D"],
+    href: "https://eniyavan-portfolio-ca9w.vercel.app/",
   },
 ];
 
